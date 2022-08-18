@@ -2,20 +2,24 @@ package com.moshi.webapi.models;
 
 import javax.persistence.*;
 
-
 @Entity
-@Table(name="CHARACTER")
+@Table(name="character")
 public class Character {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "full_name", nullable = false)
     private String full_name;
+
+    @Column(name = "alias", nullable = false)
     private String alias;
-    private enum Gender{
-        MALE, FEMALE, NONBINARY
-    }
+
+    @Enumerated(EnumType.ORDINAL)
+    private Gender gender;
+
+    @Column(name = "id", nullable = true)
     private String picture;
 
     public String getPicture() {

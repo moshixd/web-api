@@ -3,7 +3,7 @@ package com.moshi.webapi.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="MOVIE")
+@Table(name="movie")
 public class Movie {
 
 
@@ -12,12 +12,19 @@ public class Movie {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "title", nullable = false)
     private String title;
+    @Column(name = "genre", nullable = false)
     private String genre;
+
+    @Column(name = "year", nullable = false)
     private int year;
+
+    @Column(name = "director_name", nullable = false)
     private String director_name;
     private String picture;
     private String trailer;
+
 
     public Long getId() {
         return id;

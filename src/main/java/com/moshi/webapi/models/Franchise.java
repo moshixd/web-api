@@ -4,7 +4,7 @@ package com.moshi.webapi.models;
 import javax.persistence.*;
 
 @Entity
-@Table(name="FRANCHISE")
+@Table(name="franchise")
 public class Franchise {
 
     @Id
@@ -12,7 +12,10 @@ public class Franchise {
     @Column(name = "id", nullable = false)
     private Long id;
 
+    @Column(name = "name", nullable = false)
     private String name;
+
+    @Column(name = "description", nullable = true)
     private String description;
 
     public Long getId() {
